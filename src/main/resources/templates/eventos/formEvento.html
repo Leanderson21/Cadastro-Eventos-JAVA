@@ -1,20 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<meta charset="UTF-8"/>
-<title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+  </head>
+  <body>
 		
-		<h1>Cadastro de Eventos</h1>
-		<form method="POST">
-		nome: <input type="text" value="" name="nome"> <br>
-		local: <input type="text" value="" name="local"> <br>
-		data: <input type="Date" value="" name="data">  <br>
-		horário :<input type="text" value="" name="horario"><br>
-		<input type="submit" value="enviar">
-		</form>
-		
-</body>
+	<div class="container">	
+	<h1>Cadastrar Evento</h1>
+	<a href="/eventos"> <button type="button" class="btn btn-secondary">Lista de eventos</button> </a>	
+<form method="POST">
+  <div class="form-group">
+    <label for="Nome">Nome:</label>
+    <input type="text" class="form-control"   placeholder="nome do evento" name="nome">
+  </div>
+    <div class="form-group">
+    <label for="local">local:</label>
+    <input type="text" class="form-control"   placeholder="local do evento" name="local">
+  </div>
+    <div class="form-group">
+    <label for="Data">Data:</label>
+    <input type="date" class="form-control"  name="data">
+  </div>
+    <div class="form-group">
+    <label for="horario">Horário:</label>
+    <input type="text" class="form-control"   placeholder="horário do evento" name="horario">
+  </div>
+  </br>
+  <button type="submit" class="btn btn-primary">cadastrar</button>
+</form>
+</div>			
+    <script src="bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="bootstrap/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+  </body>
 </html>
+
+
+

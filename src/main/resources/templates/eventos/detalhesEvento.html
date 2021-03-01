@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+
+<div class="container">
+<h1>Lista de eventos</h1>
+<a href="/eventos"> <button type="button" class="btn btn-secondary">Lista de Eventos</button> </a>				
+					<table class="table">
+  <div th:each="evento : ${evento}" class="container detalhesEvento">
+  
+	<h5>Detalhes do Evento</h5>
+		<div class="row">
+			<p>Nome: <span th:text="${evento.nome}"></span></p>
+			<p>Local: <span th:text="${evento.local}"></span></p>
+			<p>Data: <span th:text="${evento.data}"></span></p>
+			<p>Horario: <span th:text="${evento.horario}"></span></p>
+		</div>
+		
+		<form method="post" th:object="${convidado}">
+			<div class="form-group">
+				<label for="rg"> Rg: </label>
+				<input class="form-control" value="" placeholder="Rg" name="rg"/>
+			</div>
+			<div class="form-group">
+				<label for="nome"> Nome: </label>
+			 	 <input class="form-control" value="" placeholder="nome" name="nome_convidado"/>
+			</div><br>
+				<button class="btn btn-success" >Adicionar</button>
+		
+		</form>
+		
+		
+	</div>
+	
+			
+    <script src="bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="bootstrap/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+  </body>
+</html>

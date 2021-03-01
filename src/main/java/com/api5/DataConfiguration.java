@@ -15,9 +15,8 @@ public class DataConfiguration {
     public DataSource dataSource(){ // metódo que irá pegar tudo que é necessario para realizar a conexão com o db
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/eventosapp");
-        dataSource.setUsername("root");
-        dataSource.setPassword("");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/eventosapp2");
+        dataSource.setUsername("root");        dataSource.setPassword("");
         return dataSource;
     }
 	
@@ -28,7 +27,7 @@ public class DataConfiguration {
 		adapter.setShowSql(true); // permite que o hibernate mostre as querys no console
 		adapter.setGenerateDdl(true);// permite que o hibernate crie as tabelas automaticamente
 		adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect"); // dialeto usando para o banco
-		adapter.setPrepareConnection(true); // hibernate prepara a conexao automaticamente com o db
+		adapter.setPrepareConnection(true);// hibernate prepara a conexao automaticamente com o db
 		return adapter;
 	}
 	

@@ -1,11 +1,46 @@
-<html>
+<!doctype html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
-<body>
+  </head>
+  <body>
 
-<h1>testando tudo nessa  zorra</h1>
-</body>
+<div class="container">
+<h1>Lista de eventos</h1>
+<a href="/cadastrarEvento"> <button type="button" class="btn btn-secondary">Cadastrar eventos</button> </a>				
+					<table class="table">
+  <thead>
+    <tr>
+      <th >nome</th>
+      <th >local</th>
+      <th >data</th>
+      <th >horario</th>
+      <th >Convidados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="evento: ${evento}">
+      <td><p><span th:text="${evento.nome}"></span></p></td>
+      <td><p><span th:text="${evento.local}"></span></p></td>
+      <td><p><span th:text="${evento.data}"></span></p></td>
+      <td><p><span th:text="${evento.horario}"></span></p></td>
+      <td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><button type="button" class="btn btn-success">Adicionar Convidado</button></a></td>	      
+    </tr>
+  </tbody>
+ </table>
+</div>
+			
+    <script src="bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="bootstrap/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 
-
-
+  </body>
 </html>
